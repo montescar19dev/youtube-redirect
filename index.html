@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=BMvTjYL3Y_s" />
-    <title>Redirigiendo al video...</title>
-    <script>
-      window.location.href = "https://www.youtube.com/watch?v=BMvTjYL3Y_s";
-    </script>
-    <style>
-      body {
-        font-family: sans-serif;
-        text-align: center;
-        margin-top: 50px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirigiendo a YouTube...</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const youtubeLink = "https://youtube.com/shorts/BMvTjYL3Y_s"; // <-- Pon aquí tu link de YouTube (short o normal)
+
+      if (isMobile) {
+        // Redirige al enlace de YouTube (la app se abrirá si está instalada)
+        window.location.href = youtubeLink;
+      } else {
+        // En escritorio, abre el video normalmente
+        window.location.href = youtubeLink;
       }
-    </style>
-  </head>
-  <body>
-    <p>Redirigiéndote a YouTube... Si no pasa nada, <a href="https://www.youtube.com/watch?v=BMvTjYL3Y_s">haz clic aquí</a>.</p>
-  </body>
+    });
+  </script>
+</head>
+<body>
+  <h2>Abriendo video en YouTube...</h2>
+  <p>Si no eres redirigido automáticamente, <a href="https://youtube.com/shorts/BMvTjYL3Y_s">haz clic aquí</a>.</p>
+</body>
 </html>
